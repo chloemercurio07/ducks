@@ -29,7 +29,7 @@ mallards <- read_csv(
     season = factor(season, levels = c("Spring", "Summer", "Autumn", "Winter"))
   )
 
-mallards
+saveRDS(mallards, "data/mallards.rds")
 ```
 
 ```{r}
