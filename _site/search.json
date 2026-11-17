@@ -11,6 +11,6 @@
     "href": "map.html",
     "title": "Map",
     "section": "",
-    "text": "# A tibble: 52 × 2\n   duck_id                        n\n   &lt;chr&gt;                      &lt;int&gt;\n 1 2351 - Radolfzell JC 72052 20169\n 2 1806 - Radolfzell JC70792  10139\n 3 2318 - Radolfzell JC 72053  9522\n 4 2312 - Radolfzell JC 72051  7163\n 5 2497 - Radolfzell JC74415   4835\n 6 2339 - Radolfzell JC 72018  4645\n 7 2495 - Radolfzell JC74406   3030\n 8 2501 - Radolfzell JC74418   2861\n 9 2502 - Radolfzell JC74417   2715\n10 2489 - Radolfzell JC74412   2514\n# ℹ 42 more rows"
+    "text": "# A tibble: 52 × 2\n   duck_id                        n\n   &lt;chr&gt;                      &lt;int&gt;\n 1 2351 - Radolfzell JC 72052 20169\n 2 1806 - Radolfzell JC70792  10139\n 3 2318 - Radolfzell JC 72053  9522\n 4 2312 - Radolfzell JC 72051  7163\n 5 2497 - Radolfzell JC74415   4835\n 6 2339 - Radolfzell JC 72018  4645\n 7 2495 - Radolfzell JC74406   3030\n 8 2501 - Radolfzell JC74418   2861\n 9 2502 - Radolfzell JC74417   2715\n10 2489 - Radolfzell JC74412   2514\n# ℹ 42 more rows\n\n\n\n\n# A tibble: 1 × 4\n  min_latitude max_latitude min_longitude max_longitude\n         &lt;dbl&gt;        &lt;dbl&gt;         &lt;dbl&gt;         &lt;dbl&gt;\n1         47.3         53.9          7.83          23.6"
   }
 ]

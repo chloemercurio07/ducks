@@ -13,3 +13,13 @@ library(rnaturalearth)
 read_csv("data/mallards.csv", show_col_types = FALSE) |>
   count(duck_id, sort = TRUE)
 ```
+
+```{r}
+read_csv("data/mallards.csv", show_col_types = FALSE) |>
+  summarise(
+    min_latitude = min(lat, na.rm = TRUE),
+    max_latitude = max(lat, na.rm = TRUE),
+    min_longitude = min(long, na.rm = TRUE),
+    max_longitude = max(long, na.rm = TRUE)
+  )
+```
