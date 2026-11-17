@@ -10,12 +10,35 @@ library(rnaturalearth)
 ```
 
 ```{r}
-read_csv("data/mallards.csv", show_col_types = FALSE) |>
+mallards <- read_csv(
+  "data/mallards.csv",
+  col_types = cols(timestamp = col_character()),
+  show_col_types = FALSE
+) |>
+  mutate(
+    timestamp = lubridate::ymd_hms(timestamp, tz = "UTC"),
+    month = lubridate::month(timestamp, label = TRUE),
+    month_num = lubridate::month(timestamp),
+    year = lubridate::year(timestamp),
+    season = case_when(
+      month_num %in% 3:5 ~ "Spring",
+      month_num %in% 6:8 ~ "Summer",
+      month_num %in% 9:11 ~ "Autumn",
+      month_num %in% c(12, 1, 2) ~ "Winter"
+    ),
+    season = factor(season, levels = c("Spring", "Summer", "Autumn", "Winter"))
+  )
+
+mallards
+```
+
+```{r}
+mallards |>
   count(duck_id, sort = TRUE)
 ```
 
 ```{r}
-read_csv("data/mallards.csv", show_col_types = FALSE) |>
+mallards |>
   summarise(
     min_latitude = min(lat, na.rm = TRUE),
     max_latitude = max(lat, na.rm = TRUE),
