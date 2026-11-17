@@ -17,3 +17,16 @@ mallards |>
   count(month, month_num) |>
   arrange(month_num)
 ```
+
+```{r}
+summary(mallards$speed)
+```
+
+```{r}
+mallards |>
+  filter(!is.na(speed), speed <= 30) |>
+  ggplot(aes(x = speed, y = month)) +
+  geom_density_ridges() +
+  scale_y_discrete(limits = rev(levels(mallards$month))) +
+  labs(x = "Speed (m/s)", y = "Month")
+```
