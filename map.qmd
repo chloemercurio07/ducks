@@ -47,3 +47,22 @@ mallards |>
     max_longitude = max(long, na.rm = TRUE)
   )
 ```
+
+```{r}
+countries <- ne_countries(scale = "medium", returnclass = "sf")
+
+mallards |>
+  filter(between(lat, 47, 55), between(long, 8, 25)) |>
+  ggplot(aes(x = long, y = lat, color = duck_id)) +
+  geom_sf(
+    data = countries,
+    inherit.aes = FALSE,
+    fill = "grey95",
+    color = "grey50",
+    linewidth = 0.25
+  ) +
+  geom_point(alpha = 0.6, size = 0.7) +
+  coord_sf(xlim = c(8, 25), ylim = c(47, 55), expand = FALSE) +
+  labs(x = "Longitude (°E)", y = "Latitude (°N)", color = "Duck") +
+  theme_minimal()
+```
