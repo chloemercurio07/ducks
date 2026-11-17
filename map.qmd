@@ -1,0 +1,15 @@
+---
+title: "Map"
+---
+
+```{r}
+#| message: false
+library(tidyverse)
+library(sf)
+library(rnaturalearth)
+```
+
+```{r}
+read_csv("data/mallards.csv", show_col_types = FALSE) |>
+  count(duck_id, sort = TRUE)
+```
